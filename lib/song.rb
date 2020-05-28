@@ -50,7 +50,7 @@ class Song
     song
   end
 
-  def create_from_filename(name)
+  def self.create_from_filename(name)
     array=name.gsub(".mp3","").split(" - ")
     song=self.new
     song.name=array[1]
