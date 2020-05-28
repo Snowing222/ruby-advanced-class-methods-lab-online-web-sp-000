@@ -27,6 +27,11 @@ class Song
     song.save
     song.name=name
     song
+  end
+
+  def self.find_by_name(name)
+    self.class.all.find {|song| song.name=name}
+  end
 
 
 end
