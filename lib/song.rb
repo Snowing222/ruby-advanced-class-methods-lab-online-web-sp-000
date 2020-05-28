@@ -37,7 +37,19 @@ class Song
     self.find_by_name||self.create_by_name
   end
 
-  def
+  def self.alphabetical
+    self.all.sort_by {|song|song.name}
+  end
+   #Song.new_from_filename("Taylor Swift - Blank Space.mp3")
+
+  def self.new_from_filename(name)
+    array=name.gsub(".mp3","").split(" - ")
+    song=self.new
+    song.name=array[1]
+    song.artist_name=array[0]
+    song
+  end
+  
 
 
 end
